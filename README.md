@@ -53,6 +53,7 @@ docker exec -it mynodered_mapped bash
 npm install node-red-contrib-mqtt-broker
 npm install node-red-node-mongodb
 exit
+docker restart mynodered_mapped
 ```
 
 ## Remarks
