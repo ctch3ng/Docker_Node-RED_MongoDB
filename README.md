@@ -1,21 +1,22 @@
 # Docker_Node-RED_MongoDB
-Instructions for preparing docker containers installed with Node-RED and MongoDB
+Instructions for preparing docker containers installed with Node-RED and MongoDB [Win10]
 
 Create the following folders
 
 ```
-/Users/<your username>/mosquitto/config
-/Users/<your username>/mosquitto/data
-/Users/<your username>/mosquitto/log
+c:/Users/<your username>/mosquitto/config
+c:/Users/<your username>/mosquitto/data
+c:/Users/<your username>/mosquitto/log
 ```
 
 #### Note: In the following instructions, we are using the following folders under the user **ABC**
 
 ```
-/Users/ABC/mosquitto/config
-/Users/ABC/mosquitto/data
-/Users/ABC/mosquitto/log
+c:/Users/ABC/mosquitto/config
+c:/Users/ABC/mosquitto/data
+c:/Users/ABC/mosquitto/log
 ```
+#### Note: In Docker, make sure **C Drive** has been shared
 
 ## Prepare a container with MongoDB
 
