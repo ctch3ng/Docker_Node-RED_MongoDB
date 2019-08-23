@@ -33,6 +33,11 @@ docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/
 Under **/Users/ABC/mosquitto/config**, create a text file **mosquitto.conf** with the following content
 ```
 port 1883
+listener 9001
+protocol websockets
+persistence true
+persistence_location /mosquitto/data/
+log_dest file /mosquitto/log/mosquitto.log
 ```
 Run the following command in a command prompt
 #### Remember to repalce **ABC** with your username
