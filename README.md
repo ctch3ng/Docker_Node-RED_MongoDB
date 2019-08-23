@@ -20,8 +20,7 @@ c:/Users/ABC/mosquitto/log
 
 ## Prepare a container with MongoDB
 
-Run the following command in a command prompt
-#### Remember to repalce **ABC** with your username  
+Run the following command in a command prompt 
 ```
 docker volume create --name=mongodata
 docker run -d -p 27017-27019:27017-27019 --name mymongodb -v mongodata:/data/db/ mongo:4.2.0
