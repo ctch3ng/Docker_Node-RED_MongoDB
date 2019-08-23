@@ -49,3 +49,15 @@ You can now visit **http://127.0.0.1:1880** to access Node-RED from your browser
 ## Remarks
 
 In Node-RED, you should use the link **mongodb://mongodb:27017** instead of **mongodb://127.0.0.1:27017** for accessing the linked MongoDB container.
+
+You may use the following Node-RED flow for testing
+
+```
+* Click the **Three Strips** icon on the top-right corner
+* Select **Manage palette** 
+* Select the **Install** Tab, search with the keyword **mqtt** 
+* Install **node-red-contrib-mqtt-broker** (v. 0.2.4)
+
+* Next, search wtih the keyword **mongo** 
+* Install **node-red-node-mongodb** (v. 0.0.14)
+```
