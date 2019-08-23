@@ -22,14 +22,14 @@ Create the following folders
 ## Prepare a container with MongoDB
 
 ```
-docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/db:/data/db mongo:4.2.0
+docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/db/:/data/db/ mongo:4.2.0
 ```
 #### Note: The above commands pull the MongoDB docker image (version 4.2.0) from the web, create a comtainer out of it and name it as **mymongodb**, open the corresponding ports 27017-27019, and map the folder on the host to the folder in the container
 
 ## Prepare a container with Mosquitto
 
 ```
-docker run -it -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config:/mosquitto/config -v /Users/ABC/mosquitto/data:/mosquitto/data -v /Users/ABC/mosquitto/log:/mosquitto/log --name mymosquitto eclipse-mosquitto
+docker run -it -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config/:/mosquitto/config/ -v /Users/ABC/mosquitto/data/:/mosquitto/data/ -v /Users/ABC/mosquitto/log/:/mosquitto/log/ --name mymosquitto eclipse-mosquitto
 ```
 #### Note: The above commands pull the Mosquitto docker image (latest version) from the web, create a comtainer out of it and name it as **mymosquitto**, open the corresponding ports (1883 and 9001), and map the folders on the host to the folders in the container
 
