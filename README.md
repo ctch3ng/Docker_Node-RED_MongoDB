@@ -22,6 +22,7 @@ Create the following folders
 ## Prepare a container with MongoDB
 
 Run the following command in a command prompt
+#### Remember to repalce **ABC** with your username  
 ```
 docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/db/:/data/db/ mongo:4.2.0
 ```
@@ -30,11 +31,11 @@ docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/
 ## Prepare a container with Mosquitto
 
 Under **/Users/ABC/mosquitto/config**, create a text file **mosquitto.conf** with the following content
-
 ```
 port 1883
 ```
 Run the following command in a command prompt
+#### Remember to repalce **ABC** with your username
 ```
 docker run -d -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config/:/mosquitto/config/ -v /Users/ABC/mosquitto/data/:/mosquitto/data/ -v /Users/ABC/mosquitto/log/:/mosquitto/log/ --name mymosquitto eclipse-mosquitto
 ```
