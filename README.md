@@ -85,16 +85,16 @@ You may use the following Node-RED flow for testing
 ```
 [
     {
-        "id": "eddfbd23.4b507",
+        "id": "54fc2c53.c340c4",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "1d02a0ba.be093f",
+        "id": "bcb25fbf.8dbd",
         "type": "inject",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "Virtual_DHT11",
         "topic": "",
         "payload": "23C",
@@ -107,61 +107,46 @@ You may use the following Node-RED flow for testing
         "y": 72,
         "wires": [
             [
-                "56e3f4d9.6ac26c",
-                "9c3d61e1.547a2"
+                "a512e1c4.2372f",
+                "df25f182.6e943"
             ]
         ]
     },
     {
-        "id": "27819a1e.4bbbc6",
+        "id": "f844ded6.87865",
         "type": "debug",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "TempDB_MongoDB",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "x": 518.5,
         "y": 406,
         "wires": []
     },
     {
-        "id": "56e3f4d9.6ac26c",
+        "id": "a512e1c4.2372f",
         "type": "debug",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "Temp1_MQTT",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "x": 462.5,
         "y": 124,
         "wires": []
     },
     {
-        "id": "eab13d37.bc256",
-        "type": "debug",
-        "z": "eddfbd23.4b507",
-        "name": "MQTT_Broker",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 461.5,
-        "y": 283,
-        "wires": []
-    },
-    {
-        "id": "303e7719.a98348",
+        "id": "7ea7822e.dc08ec",
         "type": "mongodb out",
-        "z": "eddfbd23.4b507",
-        "mongodb": "75d5b53e.7a75dc",
+        "z": "54fc2c53.c340c4",
+        "mongodb": "d0631cdd.2f1fd",
         "name": "",
         "collection": "Temp",
         "payonly": false,
@@ -173,58 +158,40 @@ You may use the following Node-RED flow for testing
         "wires": []
     },
     {
-        "id": "5c7b7b0e.8c3d54",
-        "type": "mosca in",
-        "z": "eddfbd23.4b507",
-        "mqtt_port": 1883,
-        "mqtt_ws_port": 8080,
-        "name": "",
-        "username": "",
-        "password": "",
-        "dburl": "mongodb://mongodb:27017/mqtt",
-        "x": 241,
-        "y": 282,
-        "wires": [
-            [
-                "eab13d37.bc256"
-            ]
-        ]
-    },
-    {
-        "id": "9c3d61e1.547a2",
+        "id": "df25f182.6e943",
         "type": "mqtt out",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "",
         "topic": "home/bedroom1/temp1",
         "qos": "2",
         "retain": "true",
-        "broker": "343ab08f.068e4",
+        "broker": "4cde74ed.6ed88c",
         "x": 499.5,
         "y": 72,
         "wires": []
     },
     {
-        "id": "5b3ceb37.99e6c4",
+        "id": "15112d56.0b33d3",
         "type": "mqtt in",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "",
         "topic": "home/+/temp1",
         "qos": "2",
         "datatype": "auto",
-        "broker": "343ab08f.068e4",
+        "broker": "9ed4875f.42b258",
         "x": 233.5,
         "y": 407,
         "wires": [
             [
-                "27819a1e.4bbbc6",
-                "303e7719.a98348"
+                "f844ded6.87865",
+                "7ea7822e.dc08ec"
             ]
         ]
     },
     {
-        "id": "3751ef83.9d5fd",
+        "id": "3f3391ea.cf1cae",
         "type": "inject",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "Virtual_DHT11",
         "topic": "",
         "payload": "25C",
@@ -237,41 +204,41 @@ You may use the following Node-RED flow for testing
         "y": 170,
         "wires": [
             [
-                "ba231c44.5b6fb",
-                "68a5318.eb422d"
+                "812a3956.8ff7a8",
+                "9c072c44.a1b07"
             ]
         ]
     },
     {
-        "id": "ba231c44.5b6fb",
+        "id": "812a3956.8ff7a8",
         "type": "debug",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "Temp2_MQTT",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "x": 463,
         "y": 222,
         "wires": []
     },
     {
-        "id": "68a5318.eb422d",
+        "id": "9c072c44.a1b07",
         "type": "mqtt out",
-        "z": "eddfbd23.4b507",
+        "z": "54fc2c53.c340c4",
         "name": "",
         "topic": "home/kitchen/temp1",
         "qos": "2",
         "retain": "true",
-        "broker": "a5778332.3d44a",
+        "broker": "2fc92d67.b84d02",
         "x": 490,
         "y": 170,
         "wires": []
     },
     {
-        "id": "75d5b53e.7a75dc",
+        "id": "d0631cdd.2f1fd",
         "type": "mongodb",
         "z": "",
         "hostname": "mongodb",
@@ -280,11 +247,11 @@ You may use the following Node-RED flow for testing
         "name": ""
     },
     {
-        "id": "343ab08f.068e4",
+        "id": "4cde74ed.6ed88c",
         "type": "mqtt-broker",
         "z": "",
         "name": "",
-        "broker": "127.0.0.1",
+        "broker": "mosquitto",
         "port": "1883",
         "clientid": "Node1",
         "usetls": false,
@@ -302,11 +269,33 @@ You may use the following Node-RED flow for testing
         "willPayload": ""
     },
     {
-        "id": "a5778332.3d44a",
+        "id": "9ed4875f.42b258",
         "type": "mqtt-broker",
         "z": "",
         "name": "",
-        "broker": "127.0.0.1",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "Node3",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "2fc92d67.b84d02",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "mosquitto",
         "port": "1883",
         "clientid": "Node2",
         "usetls": false,
