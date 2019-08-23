@@ -23,9 +23,9 @@ docker run -d -p 27017-27019:27017-27019 --name mymongodb_mapped -v /Users/ABC/M
 ## Prepare a container with Node-RED
 
 ```
-docker run -it -p 1880:1880 -p 1883:1883 -p 8883:8883 -p 8080:8080 --name mynodered_MQTT_mapped --link mymongodb_mapped:mongodb nodered/node-red-docker
+docker run -it -p 1880:1880 -p 1883:1883 -p 8883:8883 -p 8080:8080 --name mynodered_mapped --link mymongodb_mapped:mongodb nodered/node-red-docker
 ```
-#### Note: The above commands pull the Node-RED docker image (latest version) from the web, create a container out of it and name it as **mynodered_MQTT_mapped**, open the corresponding ports (1880, 1883, and 8883), and link it to the **mymongodb_mapped** container and give it a hostname **mymongodb**
+#### Note: The above commands pull the Node-RED docker image (latest version) from the web, create a container out of it and name it as **mynodered_mapped**, open the corresponding ports (1880, 1883, and 8883), and link it to the **mymongodb_mapped** container and give it a hostname **mymongodb**
 
 ## Start the containers
 
