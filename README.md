@@ -46,6 +46,15 @@ You can now visit **http://127.0.0.1:1880** to access Node-RED from your browser
 * Next, search wtih the keyword **mongo** 
 * Install **node-red-node-mongodb** (v. 0.0.14)
 
+#### Alternatively, you can install these nodes using the following commands in a terminal
+
+```
+docker exec -it mynodered_mapped bash
+npm install node-red-contrib-mqtt-broker
+npm install node-red-node-mongodb
+exit
+```
+
 ## Remarks
 
 In Node-RED, you should use the link **mongodb://mongodb:27017** instead of **mongodb://127.0.0.1:27017** for accessing the linked MongoDB container.
