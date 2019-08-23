@@ -36,7 +36,7 @@ port 1883
 ```
 Run the following command in a command prompt
 ```
-docker run -it -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config/:/mosquitto/config/ -v /Users/ABC/mosquitto/data/:/mosquitto/data/ -v /Users/ABC/mosquitto/log/:/mosquitto/log/ --name mymosquitto eclipse-mosquitto
+docker run -d -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config/:/mosquitto/config/ -v /Users/ABC/mosquitto/data/:/mosquitto/data/ -v /Users/ABC/mosquitto/log/:/mosquitto/log/ --name mymosquitto eclipse-mosquitto
 ```
 #### Note: The above commands pull the Mosquitto docker image (latest version) from the web, create a comtainer out of it and name it as **mymosquitto**, open the corresponding ports (1883 and 9001), and map the folders on the host to the folders in the container
 
@@ -44,7 +44,7 @@ docker run -it -p 1883:1883 -p 9001:9001 -v /Users/ABC/mosquitto/config/:/mosqui
 
 Run the following command in a command prompt
 ```
-docker run -it -p 1880:1880 --name mynodered --link mymongodb:mongodb --link mymosquitto:mosquitto nodered/node-red-docker
+docker run -d -p 1880:1880 --name mynodered --link mymongodb:mongodb --link mymosquitto:mosquitto nodered/node-red-docker
 ```
 #### Note: The above commands pull the Node-RED docker image (latest version) from the web, create a container out of it and name it as **mynodered**, open the corresponding ports (1880), link it to the **mymongodb** container and give it a hostname **mongodb**, and further link it to the **mymosquitto** container and give it a hostname **mosquitto**
 
