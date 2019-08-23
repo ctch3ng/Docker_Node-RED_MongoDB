@@ -31,7 +31,7 @@ docker run -it -p 1880:1880 -p 1883:1883 -p 8883:8883 -p 8080:8080 --name mynode
 
 ```
 docker start mymongodb_mapped
-docker start mynodered_MQTT_mapped
+docker start mynodered_mapped
 ```
 
 You can now visit **http://127.0.0.1:1880** to access Node-RED from your browser. 
