@@ -4,7 +4,6 @@ Instructions for preparing docker containers installed with Node-RED and MongoDB
 Create the following folders
 
 ```
-/Users/<your username>/MongoDB/db
 /Users/<your username>/mosquitto/config
 /Users/<your username>/mosquitto/data
 /Users/<your username>/mosquitto/log
@@ -13,7 +12,6 @@ Create the following folders
 #### Note: In the following instructions, we are using the following folders under the user **ABC**
 
 ```
-/Users/ABC/MongoDB/db
 /Users/ABC/mosquitto/config
 /Users/ABC/mosquitto/data
 /Users/ABC/mosquitto/log
@@ -24,7 +22,8 @@ Create the following folders
 Run the following command in a command prompt
 #### Remember to repalce **ABC** with your username  
 ```
-docker run -d -p 27017-27019:27017-27019 --name mymongodb -v /Users/ABC/MongoDB/db/:/data/db/ mongo:4.2.0
+docker volume create --name=mongodata
+docker run -d -p 27017-27019:27017-27019 --name mymongodb -v mongodata:/data/db/ mongo:4.2.0
 ```
 #### Note: The above commands pull the MongoDB docker image (version 4.2.0) from the web, create a comtainer out of it and name it as **mymongodb**, open the corresponding ports 27017-27019, and map the folder on the host to the folder in the container
 
