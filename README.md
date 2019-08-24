@@ -24,6 +24,7 @@ Run the following command in a command prompt
 ```
 docker volume create --name=mongodata
 docker run -d -p 27017-27019:27017-27019 --name mymongodb -v mongodata:/data/db/ mongo:4.2.0
+docker start mymongodb
 ```
 #### Note: The above commands pull the MongoDB docker image (version 4.2.0) from the web, create a comtainer out of it and name it as **mymongodb**, open the corresponding ports 27017-27019, and map the docker volume **mongodata** to the folder in the container
 
@@ -42,6 +43,7 @@ Run the following command in a command prompt
 #### Remember to repalce **ABC** with your username
 ```
 docker run -d -p 1883:1883 -p 9001:9001 -v c:/Users/ABC/mosquitto/config/:/mosquitto/config/ -v c:/Users/ABC/mosquitto/data/:/mosquitto/data/ -v c:/Users/ABC/mosquitto/log/:/mosquitto/log/ --name mymosquitto eclipse-mosquitto
+docker start mymosquitto
 ```
 #### Note: The above commands pull the Mosquitto docker image (latest version) from the web, create a comtainer out of it and name it as **mymosquitto**, open the corresponding ports (1883 and 9001), and map the folders on the host to the folders in the container
 
@@ -50,19 +52,11 @@ docker run -d -p 1883:1883 -p 9001:9001 -v c:/Users/ABC/mosquitto/config/:/mosqu
 Run the following command in a command prompt
 ```
 docker run -d -p 1880:1880 --name mynodered --link mymongodb:mongodb --link mymosquitto:mosquitto nodered/node-red-docker
+docker start mynodered
 ```
 #### Note: The above commands pull the Node-RED docker image (latest version) from the web, create a container out of it and name it as **mynodered**, open the corresponding ports (1880), link it to the **mymongodb** container and give it a hostname **mongodb**, and further link it to the **mymosquitto** container and give it a hostname **mosquitto**
 
-## Start the containers
-
-Run the following command in a command prompt
-```
-docker start mymongodb
-docker start mymosquitto
-docker start mynodered
-```
-
-You can now visit **http://127.0.0.1:1880** to access Node-RED from your browser. 
+You can now visit **http://127.0.0.1:1880** to access Node-RED from your browser
 
 ## Install the extra node in Node-RED
 
